@@ -1,0 +1,18 @@
+<div class="cards">
+
+    <figure class="card card--normal">
+        <div class="card__image-container">
+            <img src="../../../assets/images/pokemonLogo.png" alt="pokemonLogo" class="card__image">
+
+        </div>
+
+        <figcaption class="card__caption">
+            <h1 class="card__name">Login to Collect Pokemons</h1>
+
+            <button (click)="onLoginButtonClicked()" class="card__type">Login</button>
+            <input class="card__input" type="text" name="username" [(ngModel)]="username"
+                placeholder="Enter a trainer name...">
+
+        </figcaption>
+    </figure>
+</div>

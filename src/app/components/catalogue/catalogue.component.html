@@ -1,0 +1,25 @@
+<div class="arrows-wrapper">
+    <div>
+        <img *ngIf="navigation.previous!==null" class="arrowImg" src="../../../assets/images/left-arrow.png"
+            (click)="previous()" alt="leftarrow" />
+    </div>
+    <div>
+        <img *ngIf="navigation.next!==null" class="arrowImg" src="../../../assets/images/rightarrow.png"
+            (click)="next()" alt="rightarrow" />
+    </div>
+</div>
+
+<div *ngIf="pokemons" id="cards">
+    <figure *ngFor="let pokemon of pokemons" class="card ">
+        <div (click)="goToThisPokemon(pokemon.id)"> 
+            <div class="card__image-container">
+                <img [src]="pokemon.image" [alt]="pokemon.name" class="card__image">
+            </div>
+            <figcaption class="card__caption">
+                <h1  class="card__name">{{pokemon.name}}
+                </h1>
+            </figcaption>
+
+        </div>
+    </figure>
+</div>

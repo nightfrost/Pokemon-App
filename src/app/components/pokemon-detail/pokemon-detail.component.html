@@ -1,0 +1,63 @@
+<div *ngIf="pokemon" class="cards">
+
+    <figure class="card card--normal">
+        <div class="card__image-container">
+            <img [src]="pokemon.sprites?.front_default" [alt]="pokemon.name" class="card__image">
+            <img [src]="pokemon.sprites?.back_default" [alt]="pokemon.name" class="card__image">
+
+        </div>
+
+        <figcaption class="card__caption">
+            <h1 class="card__name">{{pokemon.name}}</h1>
+
+            <button [disabled]="isIncluded()>0" (click)="onCollectClicked()" class="card__type">Collect</button>
+
+            <table class="card__stats">
+
+                <tr>
+                    <th>Height</th>
+                    <td>{{pokemon.height}}</td>
+                </tr>
+                <tr>
+                    <th>Weight</th>
+                    <td>{{pokemon.weight}}</td>
+                </tr>
+                <tr>
+                    <th>Base Experience</th>
+                    <td>{{pokemon.base_experience}}</td>
+                </tr>
+
+                <tbody *ngFor="let baseStat of pokemon.stats">
+                    <tr>
+                        <th>{{baseStat.stat.name}}</th>
+                        <td>{{baseStat.base_stat}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="card__abilities">
+                <h4 class="card__ability">
+                    <span class="card__label">Ability</span>
+                    <h4 *ngFor="let ability of pokemon.abilities?.slice(0,5)">
+                        {{ability.ability.name}}
+                    </h4>
+                </h4>
+                <h4 class="card__ability">
+                    <span class="card__label">Moves
+                    </span>
+                    <h4 *ngFor="let move of pokemon.moves?.slice(0,5)">
+                        {{move.move.name}}
+                    </h4>
+
+                </h4>
+
+                <h4 class="card__ability">
+                    <span class="card__label">Types
+                    </span>
+                    <h4 *ngFor="let type of pokemon.types?.slice(0,5)">
+                        {{type.type.name}} </h4>
+                </h4>
+            </div>
+        </figcaption>
+    </figure>
+</div>

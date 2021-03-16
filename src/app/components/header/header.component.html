@@ -1,0 +1,17 @@
+<div *ngIf="isLogged()" class="nav-wrapper">
+    <div class="left-side">
+        <div class="nav-link-wrapper">
+            <a routerLink="/pokemons">Home</a>
+        </div>
+        <div class="nav-link-wrapper">
+            <a routerLink="/trainer">Profile</a>
+        </div>
+    </div>
+
+    <div class="right-side">
+        <div>
+            <img (click)="logoutClicked()" class="logoutImg" src="../../../assets/images/logout.png" alt="logout" />
+        </div>
+
+    </div>
+</div>
